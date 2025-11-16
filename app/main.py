@@ -8,7 +8,7 @@ class CleanUpFile:
     def __enter__(self) -> "CleanUpFile":
         return self
 
-    def __exit__(self) -> None:
+    def __exit__(self, exc_type: str, exc_val: str, exc_tb: str) -> None:
         try:
             os.remove(self.filename)
         except FileNotFoundError:
